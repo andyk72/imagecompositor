@@ -2,7 +2,7 @@
   "name": "imagecompositor",
   "version": "1.0.0",
   "description": "Image compositing tool on top of <canvas>",
-  "main": "index.js",
+  "main": "src/js/server/server.js",
   "dependencies": {
     "body-parser": "1.15.1",
     "connect-mongodb-session": "^1.3.0",
@@ -22,7 +22,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "bundle": "webpack ./src/js/main.js ./js/app.js",
-    "dev": "node src/js/server/server.js"
+    "dev": "node src/js/server/server.js",
+    "start": "node src/js/server/server.js"
   },
   "keywords": [
     "canvas",
