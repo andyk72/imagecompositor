@@ -1,0 +1,71 @@
+{
+    "stage": {
+        "id":"stage",
+        "selectorCanvas":".konvajs-content canvas",
+        "stageWidth": 2482,
+        "stageHeight": 1754,
+        "initialEditingScale": {
+            "x": 0.25,
+            "y": 0.25
+        },
+        "backgroundImage":"/compositions/la-panoramica/images/background.jpg"
+    },
+    "toolbar": {
+        "selector":".toolbar",
+        "tools": {
+            "save": {
+                "selector":".toolbar__tool-save"
+            },
+            "zoomin": {
+                "selector":".toolbar__tool-zoomin",
+                "zoomFactor": 0.03,
+                "zoomMax": 0.5
+            },
+            "zoomout": {
+                "selector":".toolbar__tool-zoomout",
+                "zoomFactor": 0.03,
+                "zoomMax": 0.13
+            },
+            "zoom100": {
+                "selector":".toolbar__tool-zoom100"
+            }
+        }
+    },
+    "menuBackgrounds": {
+        "id":"menu-backgrounds",
+        "itemSelector":".menu-backgrounds__item__image"
+    },
+    "menuImages": {
+        "id":"menu-images",
+        "itemSelector":".menu-images__item__image"
+    },
+    "menuMegaImages": {
+        "id":"menu-images-mega",
+        "btnShowSelector":".menu-images-mega__btn-show",
+        "btnHideSelector":".menu-images-mega__btn-hide",
+        "itemsContainerSelector":".menu-images-mega__images",
+        "itemSelector":".menu-images-mega__item__image"
+    },
+    "menuTools": {
+        "id":"menu-tools",
+        "itemSelector":".menu-tools__item"
+    },
+    "inputTextWidget": {
+        "selectors": {
+            "root":".create-text-widget",
+            "input":".create-text-widget__input",
+            "fontsize":".create-text-widget__font-size",
+            "ok":".create-text-widget__btn-ok",
+            "cancel":".create-text-widget__btn-cancel"
+        }
+    },
+    "collaboration": {
+        "enabled": true,
+        "serverUrl": "http://localhost:3333"
+    },
+    "debug": {
+        "enabled": false,
+        "selector":".debug-monitor",
+        "selectorContent":".debug-monitor__content"
+    }
+}

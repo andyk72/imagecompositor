@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Image Compositor</title>
+  <style>
+  </style>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/debug.css">
+</head>
+<body>
+
+    <div class="create-text-widget hidden">
+        <div class="create-text-widget__tools">
+            <select class="create-text-widget__font-size">
+                <option value="10px">10px</option>
+                <option value="12px">12px</option>
+                <option value="14px">14px</option>
+                <option value="16px">16px</option>
+                <option value="18px">18px</option>
+                <option value="20px">20px</option>
+                <option value="24px">24px</option>
+                <option value="30px">30px</option>
+                <option value="40px">40px</option>
+            </select>
+        </div>
+        <textarea class="create-text-widget__input"></textarea>
+        <button class="create-text-widget__btn-ok">Ok</button>
+        <button class="create-text-widget__btn-cancel">Cancel</button>
+    </div>
+
+    <div class="debug-monitor">
+        <div class="debug-monitor__bg"></div>
+        <div class="debug-monitor__content"></div>
+    </div>
+
+    <div class="toolbar">
+        <button class="toolbar__tool toolbar__tool-zoomin">Zoom In</button>
+        <button class="toolbar__tool toolbar__tool-zoomout">Zoom Out</button>
+        <button class="toolbar__tool toolbar__tool-zoom100">Zoom 100%</button>
+        <button id="save" class="toolbar__tool toolbar__tool-save">Save</button>
+    </div>
+
+    <div class="menu-images-mega__images hide">
+        <div class="menu-images-mega__btn-hide glyphicon glyphicon-remove"></div>
+        <div class="menu-images-mega__item">
+            <img class="menu-images-mega__item__image" src="compositions/la-panoramica/images/items/a_quanti_pazienti.png" title="A quanti pazienti" />
+        </div>
+        <div class="menu-images-mega__item">
+            <img class="menu-images-mega__item__image" src="compositions/la-panoramica/images/items/bottiglietta.png" title="Bottiglietta" />
+        </div>
+        <div class="menu-images-mega__item">
+            <img class="menu-images-mega__item__image" src="compositions/la-panoramica/images/items/compressa.png" title="Compressa" />
+        </div>
+        <div class="menu-images-mega__item">
+            <img class="menu-images-mega__item__image" src="compositions/la-panoramica/images/items/cosa_ricordano.png" title="Cosa ricordano" />
+        </div>
+        <div class="menu-images-mega__item">
+            <img class="menu-images-mega__item__image" src="compositions/la-panoramica/images/items/hai_prescritto.png" title="Hai prescritto" />
+        </div>
+        <div class="menu-images-mega__item">
+            <img class="menu-images-mega__item__image" src="compositions/la-panoramica/images/items/intention_prescribe.png" title="Intention prescribe" />
+        </div>
+        <div class="menu-images-mega__item">
+            <img class="menu-images-mega__item__image" src="compositions/la-panoramica/images/items/net_promoter.png" title="Net promoter" />
+        </div>
+        <div class="menu-images-mega__item">
+            <img class="menu-images-mega__item__image" src="compositions/la-panoramica/images/items/nuvola_1.png" title="Nuvola" />
+        </div>
+        <div class="menu-images-mega__item">
+            <img class="menu-images-mega__item__image" src="compositions/la-panoramica/images/items/nuvola_2.png" title="Nuvola" />
+        </div>
+        <div class="menu-images-mega__item">
+            <img class="menu-images-mega__item__image" src="compositions/la-panoramica/images/items/nuvola_3.png" title="Nuvola" />
+        </div>
+        <div class="menu-images-mega__item">
+            <img class="menu-images-mega__item__image" src="compositions/la-panoramica/images/items/pallino_rosso.png" title="Pallino rosso" />
+        </div>
+        <div class="menu-images-mega__item">
+            <img class="menu-images-mega__item__image" src="compositions/la-panoramica/images/items/pallino_verde.png" title="Pallino verde" />
+        </div>
+        <div class="menu-images-mega__item">
+            <img class="menu-images-mega__item__image" src="compositions/la-panoramica/images/items/pillola_lunga.png" title="Pillola lunga" />
+        </div>
+        <div class="menu-images-mega__item">
+            <img class="menu-images-mega__item__image" src="compositions/la-panoramica/images/items/pioggia.png" title="Pioggia" />
+        </div>
+        <div class="menu-images-mega__item">
+            <img class="menu-images-mega__item__image" src="compositions/la-panoramica/images/items/ranking_0_10.png" title="Ranking" />
+        </div>
+        <div class="menu-images-mega__item">
+            <img class="menu-images-mega__item__image" src="compositions/la-panoramica/images/items/soddisfazione.png" title="Soddisfazione" />
+        </div>
+        <div class="menu-images-mega__item">
+            <img class="menu-images-mega__item__image" src="compositions/la-panoramica/images/items/sole.png" title="Sole" />
+        </div>
+        <div class="menu-images-mega__item">
+            <img class="menu-images-mega__item__image" src="compositions/la-panoramica/images/items/top_of_mind.png" title="Top of mind" />
+        </div>
+    </div>
+    
+    <div class="menu-container">
+        <div id="menu-tools">
+            <div class="menu-tools__item menu-tools__item-text">
+                Aggiungi testo
+            </div>
+        </div>
+        <div id="menu-images-mega">
+            <div class="menu-images-mega__btn-show menu-item-text">
+                Aggiungi immagine
+            </div>
+        </div>      
+        <!--  
+        <div id="menu-images">
+            <div class="menu-images__item">
+                <img class="menu-images__item__image" src="images/darth.png" title="Darth Vader" />
+            </div>
+            <div class="menu-images__item">
+                <img class="menu-images__item__image" src="images/Yoda.png" title="Yoda" />
+            </div>
+            <div class="menu-images__item">
+                <img class="menu-images__item__image" src="images/obiwan.png" title="Yoda" />
+            </div>
+            <div class="menu-images__item">
+                <img class="menu-images__item__image" src="images/r2-d2.png" title="Yoda" />
+            </div>
+        </div>
+        -->
+        <div id="menu-backgrounds">
+            <!--
+            <div class="menu-backgrounds__item">
+                <img class="menu-backgrounds__item__image" src="images/background.jpg" title="Deserto" />
+            </div>
+            <div class="menu-backgrounds__item">
+                <img class="menu-backgrounds__item__image" src="images/background-2.jpg" title="Più deserto" />
+            </div>
+            <div class="menu-backgrounds__item">
+                <img class="menu-backgrounds__item__image" src="images/background-3.jpg" title="Più deserto" />
+            </div>
+            <div class="menu-backgrounds__item">
+                <img class="menu-backgrounds__item__image" src="images/background-4.jpg" title="Più deserto" />
+            </div>
+            -->
+            <div class="menu-backgrounds__item">
+                <img class="menu-backgrounds__item__image" src="compositions/la-panoramica/images/background.jpg" title="Più deserto" />
+            </div>
+        </div>
+    </div>
+    <div id="stage"></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- Application Javascript -->    
+    <script src="js/app.js"></script>
+</body>
+</html>
